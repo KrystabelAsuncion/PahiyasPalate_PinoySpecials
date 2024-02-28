@@ -27,7 +27,7 @@ use App\Http\Controllers\Auth\recipeController;
 
 
 
-Route::get('/register', [LoginRegisterCtrl::class, 'register'])->name('register');
+Route::get('/', [LoginRegisterCtrl::class, 'register'])->name('register');
 Route::post('/store', [LoginRegisterCtrl::class, 'store'])->name('store');
 Route::get('/login', [LoginRegisterCtrl::class, 'login'])->name('login');
 Route::post('/authenticate', [LoginRegisterCtrl::class, 'authenticate'])->name('authenticate');
@@ -52,19 +52,11 @@ Route::post('forgot-password', [LoginRegisterCtrl::class, 'forgotPassword'])->na
 Route::get('reset-password/{token}', [LoginRegisterCtrl::class, 'showResetPasswordForm'])->name('password.reset');
 Route::post('reset-password', [LoginRegisterCtrl::class, 'resetPassword'])->name('password.update');
 
-Route::get('/recipe{id)', [PostsController::class, 'recipe_view'])->name('recipe_view');
+Route::get('/recipe{id}', [PostsController::class, 'recipe_view'])->name('recipe_view');
 
 Route::get('/idrecipe',[PostsController::class,'recipeView'])->name('idrecipe');
 //admin
 Route::get('/admin',[adminController::class, 'dashboard'])->name('admin');
-
-//recipeTest
-Route::get('/', [DataController::class, 'indexRecipe'])->name('recipe.dashboard');
-Route::get('/recipe/create', [DataController::class, 'createRecipe'])->name('recipe.create');
-Route::get('/recipe/{id}/edit', [DataController::class, 'editRecipe'])->name('recipe.edit');
-Route::put('/recipe/{id}/update', [DataController::class, 'updateRecipe'])->name('recipe.update');
-Route::get('/recipe/{id}/delete', [DataController::class, 'destroyRecipe'])->name('recipe.destroy');
-Route::get('/recipe/{id}/show', [DataController::class, 'showRecipe'])->name('recipe.show');
 
 //for buttons
 Route::post('/recipes/{recipe}/like', [DataController::class,'likeRecipe'])->name('recipe.like');
