@@ -58,6 +58,9 @@ Route::get('/idrecipe',[PostsController::class,'recipeView'])->name('idrecipe');
 //admin
 Route::get('/admin',[adminController::class, 'dashboard'])->name('admin');
 
+Route::get('/recipe{id}/show',[DataController::class, 'showRecipe'])->name('recipe.show');
+
+
 //for buttons
 Route::post('/recipes/{recipe}/like', [DataController::class,'likeRecipe'])->name('recipe.like');
 Route::delete('/recipe/{recipe}/like', [DataController::class,'unlikeRecipe'])->name('recipe.unlike');
