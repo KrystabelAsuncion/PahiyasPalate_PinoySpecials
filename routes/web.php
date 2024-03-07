@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterCtrl;
 use App\Http\Controllers\Auth\PostsController;
+use App\Http\Controllers\GuestController;
 use App\Http\Controllers\Auth\recipeController;
 
 /*
@@ -24,7 +25,6 @@ use App\Http\Controllers\Auth\recipeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 
 
 Route::get('/', [LoginRegisterCtrl::class, 'register'])->name('register');
@@ -43,9 +43,7 @@ Route::get('/user',[UserController::class, 'userBoard'])->name('profile');
 Route::post('/upload-profile-image', [UserController::class, 'uploadProfileImage'])->name('upload.profile.image');
 Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('profile.update');
 
-
 Route::post('/logout', [LoginRegisterCtrl::class, 'logout'])->name('logout');
-Route::get('/guest-dashboard', [LoginRegisterCtrl::class, 'guestDashboard'])->name('guest-dashboard');
 Route::get('/forgot-password', [LoginRegisterCtrl::class, 'forgotPassword'])->name('forgotPassword');
 Route::get('forgot-password', [LoginRegisterCtrl::class, 'forgotPasswordForm'])->name('password.request');
 Route::post('forgot-password', [LoginRegisterCtrl::class, 'forgotPassword'])->name('password.username');
@@ -60,7 +58,6 @@ Route::get('/admin',[adminController::class, 'dashboard'])->name('admin');
 
 Route::get('/recipe{id}/show',[DataController::class, 'showRecipe'])->name('recipe.show');
 
-
 //for buttons
 Route::post('/recipes/{recipe}/like', [DataController::class,'likeRecipe'])->name('recipe.like');
 Route::delete('/recipe/{recipe}/like', [DataController::class,'unlikeRecipe'])->name('recipe.unlike');
@@ -68,4 +65,7 @@ Route::delete('/recipe/{recipe}/like', [DataController::class,'unlikeRecipe'])->
 Route::post('/recipe/{recipe}/bookmark', [DataController::class,'bookmark'])->name('recipe.bookmark');
 Route::delete('/recipe/{recipe}/bookmark', [DataController::class,'bookmark'])->name('recipe.unbookmark');
 
-
+//guest
+Route::get('/guest-category',[GuestController::class,'guestCategory'])->name('guestCategory');
+Route::get('/guest-dashboard', [LoginRegisterCtrl::class, 'guestDashboard'])->name('guest-dashboard');
+Route::get('/guest-popular',[GuestController::class, 'guestPopular'])->name('guestPopular');
