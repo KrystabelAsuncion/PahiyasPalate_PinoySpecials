@@ -71,13 +71,13 @@
     <!--home-->
     <div class="tab-content" id="homeContent">
 
-        <div class="tab-pane fade show active" id="homeTabPane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div class="tab-pane fade show active mb-4" id="homeTabPane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
 
             <div class="container-fluid px-4">
 
                 <div class="row text-center my-4">
-                    <span class="display-1 text-uppercase fw-bold">
-                        Welcome to pinoy specials
+                    <span class="display-3 text-uppercase fw-bold">
+                        Welcome to pinoy specials!
                     </span>
                 </div>
 
@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="col d-flex align-items-center text-center" style="font-weight: normal;">
-                        <h2 class="display-5">Welcome to Pinoy Specials, your ultimate destination for
+                        <h2 class="display-6">Welcome to Pinoy Specials, your ultimate destination for
                             unlocking the rich and diverse world of Filipino cuisine!
                             Our user user-friendly website and application are meticulously
                             crafted to ignite and guide your passion for cooking, bringing
@@ -96,32 +96,35 @@
                     </div>
                 </div>
 
-                <div class="row text-center my-4">
+                <!--<div class="row text-center my-4">
                     <span class="display-6 fs-21 my-auto">
                         Whether you’re a Filipino Cuisine connoisseur or just beggining to explore
                     its wonders, Pinoy Specials is here to accompany you a flavorful journey.
                     Elevate your cooking experience, celebrate the rich tapestry of Filipino flavors,
                     and make every meal a memorable one with Pinoy Specials- where passion meets plate!
                     </span>
-                </div>
+                </div>-->
 
                 <hr class="my-4 mx-auto" style="width: 85%; border-width: 3px;">
 
                 <div class="row gy-3 mx-3">
 
                     <div class="col-lg-3 col-sm-7 mx-auto text-center py-3" style="border-radius: 40px; background-color: #eca766a5;">
-                        <img src="img/logo_ic/book.jpeg" class="rounded-circle img-fluid" width="300px" height="300px">
-                        <span class="display-5 mx-auto p-1">Embark on a delicious and flavorful dishes.</span>
+                        <img src="img/logo_ic/book.jpeg" class="rounded-circle img-fluid" width="250px" height="250px">
+                        <br>
+                        <span class="display-6 fs-1 mx-auto p-1">Embark on a delicious and flavorful dishes.</span>
                     </div>
 
                     <div class="col-lg-3 col-sm-7 mx-auto text-center py-3" style="border-radius: 40px; background-color: #eca766a5;">
-                        <img src="img/logo_ic/chef.jpeg" class="rounded-circle img-fluid" width="300px" height="300px">
-                        <span class="display-5 mx-auto p-1">Discover Filipino Wonders.</span>
+                        <img src="img/logo_ic/chef.jpeg" class="rounded-circle img-fluid" width="250px" height="250px">
+                        <br>
+                        <span class="display-6 fs-1 mx-auto p-1">Discover Filipino Wonders.</span>
                     </div>
 
                     <div class="col-lg-3 col-sm-7 mx-auto text-center py-3" style="border-radius: 40px; background-color: #eca766a5;">
-                        <img src="img/logo_ic/book.jpeg" class="rounded-circle img-fluid" width="300px" height="300px">
-                        <span class="display-5 mx-auto p-1">Save your favorite recipes.</span>
+                        <img src="img/logo_ic/book.jpeg" class="rounded-circle img-fluid" width="250px" height="250px">
+                        <br>
+                        <span class="display-6 mx-auto p-1">Save your favorite recipes.</span>
                     </div>
                 </div>
 
@@ -130,7 +133,7 @@
                 <div class="row text-center">
                     <span class="text-uppercase display-2 fw-bold">Meet the Filipino chefs!</span>
                     <div class="row">
-                        <span class="text-uppercase display-5 p-5">Explore the famous Filipino Chefs who have mastered the art of creating their mouth watering dishes.</span>
+                        <span class="text-uppercase display-6 p-5">Explore the famous Filipino Chefs who have mastered the art of creating their mouth watering dishes.</span>
                     </div>
                 </div>
 
@@ -285,5 +288,6 @@
 
 
 </div>
+
 
 @endsection

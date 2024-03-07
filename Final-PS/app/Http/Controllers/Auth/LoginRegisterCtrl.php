@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\Auth\Category;
+use App\Models\GuestName;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -85,7 +86,6 @@ class LoginRegisterCtrl extends Controller
         return redirect()->route('login')->with('message', 'Password reset successfully.');
     }
 
-
     /**
      * Display a registration form.
      *
@@ -93,6 +93,7 @@ class LoginRegisterCtrl extends Controller
      */
     public function register()
     {
+
         return view('Auth.register');
     }
 
@@ -178,15 +179,6 @@ class LoginRegisterCtrl extends Controller
     }
 
 
-    /*guestdashboard*/
-
-    public function guestDashboard()
-    {
-        // Generate a random username
-        $randomUsername = 'Guest_' . Str::random(8);
-
-        return view('auth.guest', ['username' => $randomUsername]);
-    }
 
     /**
      * Log out the user from application.

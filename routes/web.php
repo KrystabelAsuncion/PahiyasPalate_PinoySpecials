@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Auth\adminController;
+use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DataController;
@@ -66,6 +67,8 @@ Route::post('/recipe/{recipe}/bookmark', [DataController::class,'bookmark'])->na
 Route::delete('/recipe/{recipe}/bookmark', [DataController::class,'bookmark'])->name('recipe.unbookmark');
 
 //guest
+Route::post('/guest-name-submit', [GuestController::class, 'submitGuestName'])->name('guest.name.submit');
+Route::get('/registerGuest', [GuestController::class, 'registerAsGuest'])->name('registerAsGuest');
 Route::get('/guest-category',[GuestController::class,'guestCategory'])->name('guestCategory');
-Route::get('/guest-dashboard', [LoginRegisterCtrl::class, 'guestDashboard'])->name('guest-dashboard');
+Route::get('/guest-dashboard', [GuestController::class, 'guestDashboard'])->name('guest-dashboard');
 Route::get('/guest-popular',[GuestController::class, 'guestPopular'])->name('guestPopular');
