@@ -19,8 +19,8 @@ class Recipe extends Model
 
     protected $fillable =
     [
-        'level_id',
-        'category_id',
+        'level',
+        'category',
         'recipe_name',
         'recipe_description',
         'recipe_image',
@@ -43,13 +43,6 @@ class Recipe extends Model
     public function author()
     {
         return $this->belongsTo(User::class);
-    }
-    public function category() {
-        return $this->belongsTo(Category::class,'category_id');
-    }
-    public function level()
-    {
-        return $this->belongsTo(Level::class,'level_id');
     }
     public function steps()
     {

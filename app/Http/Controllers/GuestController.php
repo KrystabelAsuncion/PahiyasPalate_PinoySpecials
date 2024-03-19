@@ -35,26 +35,21 @@ public function guestDashboard(Request $request)
         return view('Auth.guest', ['username' => $guestName]);
     }
 
-    public function guestCategory(){
-        $randomUsername = 'Guest_' . Str::random(8);
-        $breakfastCategories = $this->fetchCategoriesByName('breakfast');
-        $lunchCategories = $this->fetchCategoriesByName('lunch');
-        $dinnerCategories = $this->fetchCategoriesByName('dinner');
-        $snacksCategories = $this->fetchCategoriesByName('snacks');
+    public function guestCategory(Request $request){
+        $guestName = $request->session()->get('guest');
+        $breakfastCategories = Recipe::where('category','breakfast')->get();
+        $lunchCategories = Recipe::where('category','lunch')->get();
+        $dinnerCategories = Recipe::where('category','dinner')->get();
+        $snacksCategories = Recipe::where('category','snacks')->get();
 
         return view('Guest.guest-category',
-        ['username' => $randomUsername, 'breakfastCategories' => $breakfastCategories, 'lunchCategories' => $lunchCategories,'dinnerCategories' => $dinnerCategories, 'snacksCategories' => $snacksCategories]);
+        ['username' => $guestName, 'breakfastCategories' => $breakfastCategories, 'lunchCategories' => $lunchCategories,'dinnerCategories' => $dinnerCategories, 'snacksCategories' => $snacksCategories]);
     }
 
-    public function fetchCategoriesByName($category)
-    {
-        //fetch categories based on their name
-        $categories = Category::where('category', $category)->get();
-
-        return $categories;
-    }
+    
     public function guestPopular(Request $request){
-        $username = 'Guest_' . Str::random(8);
+
+        $username = $request->session()->get('guest');
         $searchQuery = $request->input('search');
         $recipes = Recipe::where('recipe_name', 'like', '%' . $searchQuery . '%')
             ->orWhere('recipe_description', 'like', '%' . $searchQuery . '%')->get();
@@ -62,5 +57,28 @@ public function guestDashboard(Request $request)
         $mostViewedRecipe = Recipe::orderBy('views_count', 'desc')->take(5)->get();
         $mostLikedRecipe = Recipe::orderBy('likes', 'desc')->take(5)->get();
         return view('Guest.guest-popular',compact('recipes','searchQuery','mostViewedRecipe','mostLikedRecipe','username'));
+    }
+    public function guestAddRecipe(Request $request)
+    {
+        $username = $request->session()->get('guest');
+        return view('Guest.guestAddRecipe', compact('username'));
+    }
+
+    public function guestAbout(Request $request)
+    {
+        $username = $request->session()->get('guest');
+        return view('Guest.guest-about', compact('username'));
+    }
+    
+    public function guestContact(Request $request)
+    {
+        $username = $request->session()->get('guest');
+        return view('Guest.guest-contact', compact('username'));
+        
+    }
+    public function guestProfile(Request $request)
+    {
+        $username = $request->session()->get('guest');
+        return view('Guest.guest-profile',compact('username'));
     }
 }

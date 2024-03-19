@@ -13,9 +13,7 @@ class MakeRecipeController extends Controller
     public function MakeRecipeBoard()
     {
         if (Auth::check()) {
-            $category = Category::all();
-            $level = Level::all();
-            return view('Auth.addrecipe',compact('category','level'));
+            return view('Auth.addrecipe');
         }
 
         return redirect()->route('login')
@@ -28,18 +26,18 @@ class MakeRecipeController extends Controller
         $validatedData = $request->validate([
             'recipe_name' => 'required|string',
             'recipe_description' => 'required|string',
-            'category_id' => 'required|exists:category,id',
-            'level_id' => 'required|exists:levels,id',
+            'category' => 'required|in:breakfast,lunch,dinner,snacks',
+            'level' => 'required|in:easy,not-so-difficult,chefs-level',
             'recipe_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'link'=> 'required|string',
+            'link' => 'required|string',
         ]);
         $user = Auth::user();
 
         $recipe = Recipe::create([
             'recipe_name' => $validatedData['recipe_name'],
             'recipe_description' => $validatedData['recipe_description'],
-            'category_id' => $validatedData['category_id'],
-            'level_id' => $validatedData['level_id'],
+            'category' => $validatedData['category'],
+            'level' => $validatedData['level'],
             'recipe_image' => '', // We'll update this after storing the image
             'link' => $validatedData['link'],
             'user_id' => $user->id
@@ -55,7 +53,6 @@ class MakeRecipeController extends Controller
         // Steps
         if ($request->has('steps')) {
             $stepsValidationRules = [
-                'order' => 'required|string|max:255',
                 'instruction' => 'required|string|max:255',
             ];
 
@@ -67,7 +64,6 @@ class MakeRecipeController extends Controller
                 }
 
                 $recipe->steps()->create([
-                    'order' => $stepsData['order'],
                     'instruction' => $stepsData['instruction'],
                 ]);
             }

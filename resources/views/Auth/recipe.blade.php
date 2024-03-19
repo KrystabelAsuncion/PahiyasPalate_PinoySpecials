@@ -21,7 +21,7 @@
                 <!-- Category link -->
                 <li class="breadcrumb-item"><a href="{{ route('category') }}" class="text-dark" style="text-decoration: none;">Categories</a></li>
                 <!-- Current category (active) -->
-                <li class="breadcrumb-item">{{ $currentCategory->category }}</li>
+                <li class="breadcrumb-item">{{ $currentCategory }}</li>
                 <!-- Recipe (if available) -->
                 @isset($currentRecipe)
                     <li class="breadcrumb-item fw-bold active" aria-current="page"><a href="{{ route('recipe.show', $currentRecipe->id) }}" class="text-dark" style="text-decoration: none;">{{ $currentRecipe->recipe_name }}</a></li>
@@ -130,10 +130,7 @@
             <li class="mb-4">
                 <div class="row">
                     <div class="col-auto col-sm-6 col-lg-auto">
-                        <span class="fw-bold h3">{{$item->order}}:</span>
-                    </div>
-                    <div class="col-sm-4 col-lg-6">
-                        <span class="h4">{{$item->instruction}}</span>
+                        <span class="fw-bold h3">{{$item->instruction}}</span>
                     </div>
                 </div>
             </li>

@@ -15,8 +15,8 @@
 
 <div class="container main d-flex justify-container-center align-items-center min-vh-100">
     <div class="row mx-auto img-area">
-        <div class="col-md-6 col-lg-8 col-xl-12 d-block p-3 mx-auto justify-content-center">
-            <img src="{{asset('img/logo_ic/logo11.PNG')}}" class="img-fluid">
+        <div class="col-md-6 col-lg-8 col-xl-12 d-sm-none d-lg-block p-3 mx-auto justify-content-center">
+            <img src="{{asset('img/logo_ic/logo11.png')}}" class="img-fluid">
         </div>
     </div>
     <div class="row border rounded-5 px-5 mx-auto shadow text-center bg-white">
@@ -52,7 +52,7 @@
                                 <span class="text-danger">{{$errors->first('password')}}</span>
                             @endif
                             <label for="password" class="text-capitalize">Password</label>
-                            <small id="passwordHelpInline_pw" class="justify-content-start fw-bold text-muted" style="margin-right: 145px; visibility:hidden;">Must be 8 to 12 characters long.</small>
+                            <small id="passwordHelpInline_pw" class="justify-content-start fw-bold text-muted" style="margin-right: 145px; visibility:hidden; font-size:10px;">Must be 8 to 12 characters long.</small>
                         </div>
                     </div>
 

@@ -36,28 +36,28 @@
 
             <!--add recipe-->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('addrecipe') }}">
+                <a class="nav-link" href="{{ route('guestAddRecipeDisabled') }}">
                     <span class="h3">Make Recipe</span>
                 </a>
             </li>
 
             <!--AboutTab-->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('about') }}">
+                <a class="nav-link" href="{{ route('guest-about') }}">
                     <span class="h3">About us</span>
                 </a>
             </li>
 
             <!--contactTab-->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('contact') }}">
+                <a class="nav-link" href="{{ route('guest-contact') }}">
                     <span class="h3">Contact us</span>
                 </a>
             </li>
 
             <!--Profile-->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('profile') }}">
+                <a class="nav-link" href="{{ route('guest-profile') }}">
                     <span class="h3 ms-2">{{$username}}</span>
                 </a>
             </li>
@@ -76,7 +76,7 @@
             <div class="container-fluid px-4">
 
                 <div class="row text-center my-4">
-                    <span class="display-3 text-uppercase fw-bold">
+                    <span class="display-5 text-uppercase fw-bold">
                         Welcome to pinoy specials!
                     </span>
                 </div>
@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="col d-flex align-items-center text-center" style="font-weight: normal;">
-                        <h2 class="display-6">Welcome to Pinoy Specials, your ultimate destination for
+                        <h2 class="display-6 fs-2">Your ultimate destination for
                             unlocking the rich and diverse world of Filipino cuisine!
                             Our user user-friendly website and application are meticulously
                             crafted to ignite and guide your passion for cooking, bringing
@@ -131,9 +131,9 @@
                 <hr class="my-4 mx-auto" style="width: 85%; border-width: 3px;">
 
                 <div class="row text-center">
-                    <span class="text-uppercase display-2 fw-bold">Meet the Filipino chefs!</span>
+                    <span class="text-uppercase display-5 fw-bold">Meet the Filipino chefs!</span>
                     <div class="row">
-                        <span class="text-uppercase display-6 p-5">Explore the famous Filipino Chefs who have mastered the art of creating their mouth watering dishes.</span>
+                        <span class="text-uppercase display-6 fs-3 p-5">Explore the famous Filipino Chefs who have mastered the art of creating their mouth watering dishes.</span>
                     </div>
                 </div>
 
@@ -141,21 +141,21 @@
                 <div class="row mt-5 shadow-lg p-5 mx-5 claude" style="border-radius: 70px; background-color: #f7c699b7;">
 
                     <div class="col col-sm-8 col-md-11 col-lg-3">
-                        <img src="img/chef/CLAUDETAYAG.png" class="img-fluid d-block" style="max-width: 325px">
+                        <img src="img/chef/CLAUDETAYAG.png" class="img-fluid d-lg-block d-sm-none text-center" style="max-width: 325px">
                     </div>
 
                     <div class="col col-lg-5 align-self-center text-center">
-                        <span class="display-3 fw-bold text-sm-center">Claude Tayag</span>
-                        <div class="row display-6 fs-2 p-5 d-none d-md-none d-lg-block">
+                        <span class="display-4 fw-bold text-sm-center">Claude Tayag</span>
+                        <div class="row display-6 fs-4 p-5 d-none d-md-none d-lg-block">
                             Chef Tayag is renowned for his innovative take on Filipino cuisine.
                             One of his notable dishes is Kambingan,
                             showcasing his creativity in preparing goat meat.
                         </div>
                     </div>
 
-                    <div class="col col-md-4 d-none d-md-none d-lg-block">
-                        <div class="card shadow align-items-center p-5 mt-4 imgcard"
-                        style="width: 30rem; background: #FEE9D6; border: none; border-radius: 50px;"
+                    <div class="col col-md-2 d-none d-md-none d-lg-block">
+                        <div class="card shadow align-items-center p-2 mt-4 imgcard"
+                        style="width: 25rem; background: #FEE9D6; border: none; border-radius: 50px;"
                         data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left"
                         data-bs-content="<div class='card text-center'><div class='card-header'>
                             <img src='img/foods/kambingan.JPG' class='img-fluid rounded-circle card-img-center' width='200'><h1>KAMBINGAN</h1></div>
@@ -172,19 +172,19 @@
                 <div class="row mt-5 shadow-lg mx-5 p-5" style="border-radius: 70px; background-color: #f7c699b7;">
 
                     <div class="col col-sm-6 col-md-11 col-lg-3">
-                        <img src="img/chef/CHEFBOYLOGRO.png" class="img-fluid d-block" style="max-width: 325px">
+                        <img src="img/chef/CHEFBOYLOGRO.png" class="img-fluid d-lg-block d-sm-none" style="max-width: 325px">
                     </div>
 
                     <div class="col col-lg-5 align-self-center text-center">
-                        <span class="display-3 fw-bold">Pablo "Boy" Logro</span>
-                        <div class="row display-6 fs-2 p-5 d-none d-md-block">
+                        <span class="display-4 fw-bold">Pablo "Boy" Logro</span>
+                        <div class="row display-6 fs-4 p-5 d-none d-md-block">
                             Chef Pablo "Boy" Logro is a well-known Filipino chef who gained fame through his
                             culinary expertise and television appearances. Chef Boy Logro is associated with various Filipino dishes,
                             and one of his famous dishes is "Lechon Belly."
                         </div>
                     </div>
-                    <div class="col col-md-4 d-none d-md-block">
-                        <div class="card shadow align-items-center p-5 mt-4" style="width: 30rem; background: #FEE9D6; border: none; border-radius: 50px;"
+                    <div class="col col-md-2 d-none d-md-block">
+                        <div class="card shadow align-items-center p-5 mt-4" style="width: 25rem; background: #FEE9D6; border: none; border-radius: 50px;"
                         data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left"
                         data-bs-content="<div class='card text-center'><div class='card-header'>
                             <img src='img/foods/lechonBelly.JPG' class='img-fluid rounded-circle card-img-center' width='200'><h1>Lechon Belly</h1></div>
@@ -201,19 +201,19 @@
                 <div class="row mt-5 shadow-lg mx-5 p-5" style="border-radius: 50px;  background-color: #f7c699b7;">
 
                     <div class="col col-sm-6 col-md-11 col-lg-3">
-                        <img src="img/chef/TATUNGSARTHOU.png" class="img-fluid d-block" style="max-width: 325px">
+                        <img src="img/chef/TATUNGSARTHOU.png" class="img-fluid d-lg-block d-sm-none" style="max-width: 325px">
                     </div>
 
                     <div class="col col-lg-5 align-self-center text-center">
-                        <span class="display-3 fw-bold">Tatung Sarthou</span>
-                        <div class="row display-6 fs-2 p-5 d-none d-md-block">
+                        <span class="display-4 fw-bold">Tatung Sarthou</span>
+                        <div class="row display-6 fs-4 p-5 d-none d-md-block">
                             Chef Tatung is known for his advocacy of promoting Filipino cuisine and culinary heritage.
                             Adobong Pula, a red-hued version of the classic adobo, is one of his creations.
                         </div>
                     </div>
                     <!--food image-->
-                    <div class="col col-md-4 d-none d-md-block">
-                        <div class="card shadow align-items-center p-5 mt-4" style="width: 30rem; background: #FEE9D6; border: none; border-radius: 50px;"
+                    <div class="col col-md-2 d-none d-md-block">
+                        <div class="card shadow align-items-center p-5 mt-4" style="width: 25rem; background: #FEE9D6; border: none; border-radius: 50px;"
                         data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left"
                         data-bs-content="<div class='card text-center'><div class='card-header'>
                             <img src='img/foods/adobongpula.JPG' class='img-fluid rounded-circle card-img-center' width='200'><h1>Adobong Pula</h1></div>
@@ -228,19 +228,19 @@
                 <div class="row mt-5 shadow-lg mx-5 p-5" style="border-radius: 50px; background-color: #f7c699b7;">
 
                     <div class="col col-sm-6 col-md-11 col-lg-3">
-                        <img src="img/chef/JPANGLO.png" class="img-fluid d-block" style="max-width: 325px">
+                        <img src="img/chef/JPANGLO.png" class="img-fluid d-lg-block d-sm-none" style="max-width: 325px">
                     </div>
 
                     <div class="col col-lg-5 align-self-center text-center">
-                        <span class="display-3 fw-bold">Jp Anglo</span>
-                        <div class="row display-6 fs-2 p-5 d-none d-md-block">
+                        <span class="display-4 fw-bold">Jp Anglo</span>
+                        <div class="row display-6 fs-4 p-5 d-none d-md-block">
                             Chef JP Anglo is known for his innovative approach to Filipino cuisine and his advocacy for local ingredients.
                             Talangka Rice, featuring crab fat, is one of his well-known dishes.
                         </div>
                     </div>
 
                     <div class="col col-md-4 d-none d-md-block">
-                        <div class="card shadow align-items-center p-5 mt-4" style="width: 30rem; background: #FEE9D6; border: none; border-radius: 50px;"
+                        <div class="card shadow align-items-center p-5 mt-4" style="width: 25rem; background: #FEE9D6; border: none; border-radius: 50px;"
                         data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left"
                         data-bs-content="<div class='card text-center'><div class='card-header'>
                             <img src='img/foods/talangkaRice.JPG' class='img-fluid rounded-circle card-img-center' width='200'><h1>Talangka Rice</h1></div>
@@ -256,19 +256,19 @@
                 <div class="row mt-5 shadow-lg p-5 mx-5" style="border-radius: 50px; background-color: #f7c699b7;">
 
                     <div class="col col-sm-6 col-md-11 col-lg-3">
-                        <img src="img/chef/MARGARITA.png" class="img-fluid d-block" style="max-width: 325px;">
+                        <img src="img/chef/MARGARITA.png" class="img-fluid d-lg-block d-sm-none" style="max-width: 325px;">
                     </div>
 
                     <div class="col col-lg-5 align-self-center text-center">
-                        <span class="display-3 fw-bold">Margarita Flores</span>
-                        <div class="row display-6 fs-2 p-5 d-none d-md-block">
+                        <span class="display-4 fw-bold">Margarita Flores</span>
+                        <div class="row display-6 fs-4 p-5 d-none d-md-block">
                                 Chef Flores is known for her culinary expertise in various cuisines, including Filipino.
                                 While she has showcased a variety of dishes, her take on Lechon de Leche Sinigang is notable.
                         </div>
                     </div>
 
                     <div class="col col-md-4 d-none d-md-block">
-                        <div class="card shadow align-items-center p-5 text-center" style="width: 30rem; background: #FEE9D6; border: none; border-radius: 50px;"
+                        <div class="card shadow align-items-center p-5 text-center" style="width: 25rem; background: #FEE9D6; border: none; border-radius: 50px;"
                         data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-placement="left"
                         data-bs-content="<div class='card text-center'><div class='card-header'>
                             <img src='img/foods/lechonsinigang.JPG' class='img-fluid rounded-circle card-img-center' width='200'><h1>Lechon De Leche Sinigang</h1></div>

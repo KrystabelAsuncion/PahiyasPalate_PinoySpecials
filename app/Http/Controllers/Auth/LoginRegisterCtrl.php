@@ -35,7 +35,7 @@ class LoginRegisterCtrl extends Controller
 
     public function forgotPasswordForm()
     {
-        return view('Auth.forgotpassword');
+        return view('Auth.forgotPassword');
     }
 
     public function forgotPassword(Request $request)

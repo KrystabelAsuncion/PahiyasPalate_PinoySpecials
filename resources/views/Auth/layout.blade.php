@@ -20,8 +20,12 @@
 </head>
 <style>
 
+    nav{
+        font-size:5px;
+    }
+
     body {
-        background-color: #FEE9D6
+        background-color: #FEE9D6;
     }
 
     .img-area {

@@ -12,7 +12,7 @@ class Step extends Model
     protected $primaryKey = 'id';
     use HasFactory;
 
-    protected $fillable = ['order','instruction','recipe_id'];
+    protected $fillable = ['instruction','recipe_id'];
 
     public function recipe()
     {

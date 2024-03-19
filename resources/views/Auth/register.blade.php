@@ -4,12 +4,12 @@
 
 <div class="container main d-flex justify-container-center align-items-center min-vh-100">
     <div class="row mx-auto img-area">
-        <div class="col-md-6 col-lg-8 col-xl-12 d-block p-3 mx-auto justify-content-center">
+        <div class="col-md-6 col-lg-8 col-xl-12 d-sm-none d-lg-block p-3 mx-auto justify-content-center">
             <img src="{{asset('img/logo_ic/logo11.png')}}" class="img-fluid">
         </div>
     </div>
     <div class="row border rounded-5 px-5 mx-auto shadow text-center bg-white">
-        <div class="col-md-6 col-lg-8 col-xl-12 p-4 my-4 d-flex justify-content-center flex-column right-box">
+        <div class="col-md-6 col-lg-8 col-xl-12 p-4 d-flex justify-content-center flex-column right-box">
             <div class="row align-items-center">
                 <div class="header mb-3 mx-auto">
                     <p class="h1 text-uppercase fw-bold">REGISTER</p>
@@ -50,16 +50,16 @@
                                 <span class="text-danger">{{$errors->first('password')}}</span>
                             @endif
                             <label for="password" class="text-capitalize">Password</label>
-                            <small id="passwordHelpInline_pw" class="justify-content-start fw-bold text-muted" style="margin-right: 145px; visibility:hidden;">Must be 8 to 12 characters long.</small>
+                            <small id="passwordHelpInline_pw" class="justify-content-start fw-bold text-muted" style="margin-right: 145px; visibility:hidden; font-size:10px;">Must be 8 to 12 characters long.</small>
                         </div>
                     </div>
                     <!--confirm pass-->
-                    <div class="input-group my-1">
+                    <div class="input-group">
                         <div class="form-floating">
                             <input type="password" class="form-control form-control-lg bg-light fs-6" name="password_confirmation" id="password_confirmation" placeholder="" required
                             style="background: transparent; border:none; box-shadow:none; border-bottom: 1px solid gray; border-radius:0;">
                             <label for="password_confirmation" class="text-capitalize">Confirm password</label>
-                            <small id="passwordHelpInline_conpw" class="justify-content-start fw-bold text-muted" style="margin-right: 145px; visibility:hidden;">Must be 8 to 12 characters long.</small>
+                            <small id="passwordHelpInline_conpw" class="justify-content-start fw-bold text-muted" style="margin-right: 145px; visibility:hidden; font-size:10px;">Must be 8 to 12 characters long.</small>
                         </div>
                     </div>
 

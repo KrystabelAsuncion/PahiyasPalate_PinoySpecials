@@ -109,25 +109,27 @@
                                             </div>
                                             <!--category-->
                                             <div class="row">
-                                                <label for="category_id">Category</label>
+                                                <label for="category">Category</label>
                                                 <div class="col-sm-12">
-                                                    <select id="category_id" name="category_id" class="form-select mb-3" required>
+                                                    <select id="category" name="category" class="form-select mb-3" required>
                                                         <option value="" selected>Select Category</option>
-                                                        @foreach($category as $category)
-                                                            <option value="{{ $category->id }}">{{ $category->category }}</option>
-                                                        @endforeach
+                                                        <option value="breakfast">breakfast</option>
+                                                        <option value="lunch">lunch</option>
+                                                        <option value="dinner">dinner</option>
+                                                        <option value="snacks">snacks</option>
+
                                                     </select>
                                                 </div>
                                             </div>
                                             <!--level-->
                                             <div class="row">
-                                                <label for="level_id">Level</label>
+                                                <label for="level">Level</label>
                                                 <div class="col-sm-12">
-                                                    <select id="level_id" name="level_id" class="form-select mb-3" required>
+                                                    <select id="level" name="level" class="form-select mb-3" required>
                                                         <option value="" selected>Select Level</option>
-                                                        @foreach($level as $level)
-                                                            <option value="{{ $level->id }}">{{ $level->level }}</option>
-                                                        @endforeach
+                                                        <option value="easy">easy</option>
+                                                        <option value="not-so-difficult">not-so-difficult</option>
+                                                        <option value="chefs-level">chefs-level</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -208,10 +210,7 @@
                                                 <label for="steps">Steps:</label>
                                                 <div class="steps-fields">
                                                     <div class="steps-field">
-                                                        <input type="text" name="steps[0][order]" class="form-control mb-2" placeholder="e.g Combine Dry Ingredients:" >
                                                         <textarea type="text" name="steps[0][instruction]" class="form-control mb-2" placeholder="e.g In a large bowl, whisk together the flour..." ></textarea>
-                                                        <input type="text" name="steps[1][order]" class="form-control mb-2" placeholder="e.g Combine Dry Ingredients:" >
-                                                        <textarea type="text" name="steps[1][instruction]" class="form-control mb-2" placeholder="e.g In a large bowl, whisk together the flour..." ></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -265,7 +264,6 @@
                 var index = $(".steps-field").length;
                 var html = `
                         <div class="steps-field">
-                            <input type="text" name="steps[${index}][order]" class="form-control mb-2" placeholder="Add more" required>
                             <textarea type="text" name="steps[${index}][instruction]" class="form-control mb-2" placeholder="Instruction" required></textarea>
                         </div>`;
 

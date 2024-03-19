@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\Auth\adminController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
@@ -51,13 +51,15 @@ Route::post('forgot-password', [LoginRegisterCtrl::class, 'forgotPassword'])->na
 Route::get('reset-password/{token}', [LoginRegisterCtrl::class, 'showResetPasswordForm'])->name('password.reset');
 Route::post('reset-password', [LoginRegisterCtrl::class, 'resetPassword'])->name('password.update');
 
-Route::get('/recipe{id}', [PostsController::class, 'recipe_view'])->name('recipe_view');
-
+Route::get('/recipe/{id}', [PostsController::class, 'recipe_view'])->name('recipe_view');
 Route::get('/idrecipe',[PostsController::class,'recipeView'])->name('idrecipe');
 //admin
-Route::get('/admin',[adminController::class, 'dashboard'])->name('admin');
+Route::get('/admin-login',[AdminController::class, 'AdminLogin'])->name('admin-login');
+Route::get('/admin-register',[AdminController::class,'AdminRegister'])->name('admin-register');
+Route::get('/admin-dashboard',[AdminController::class,'AdminDashboard'])->name('admin-dashboard');
 
-Route::get('/recipe{id}/show',[DataController::class, 'showRecipe'])->name('recipe.show');
+//recipe view
+Route::get('/recipe/{id}/show',[DataController::class, 'showRecipe'])->name('recipe.show');
 
 //for buttons
 Route::post('/recipes/{recipe}/like', [DataController::class,'likeRecipe'])->name('recipe.like');
@@ -72,3 +74,8 @@ Route::get('/registerGuest', [GuestController::class, 'registerAsGuest'])->name(
 Route::get('/guest-category',[GuestController::class,'guestCategory'])->name('guestCategory');
 Route::get('/guest-dashboard', [GuestController::class, 'guestDashboard'])->name('guest-dashboard');
 Route::get('/guest-popular',[GuestController::class, 'guestPopular'])->name('guestPopular');
+Route::get('/guestAddRecipeDis', [GuestController::class, 'guestAddRecipe'])->name('guestAddRecipeDisabled');
+Route::get('/guest-about', [GuestController::class, 'guestAbout'])->name('guest-about');
+Route::get('/guest-contact',[GuestController::class,'guestContact'])->name('guest-contact');
+Route::get('/guest-profile',[GuestController::class,'guestProfile'])->name('guest-profile');
+

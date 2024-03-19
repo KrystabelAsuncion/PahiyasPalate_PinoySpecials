@@ -11,7 +11,7 @@
     </button>
 
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav nav-underline d-flex justify-content-sm-center">
+        <ul class="navbar-nav nav-underline d-flex justify-content-sm-center" role="tablist">
             <!--hometab-->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('guest-dashboard') }}">
@@ -20,7 +20,7 @@
             </li>
             <!--categories-->
             <li class="nav-item">
-                <a class="nav-link active" href="{{ route('guestCategory') }}">
+                <a class="nav-link" href="{{ route('guestCategory') }}">
                     <span class="h3">Categories</span>
                 </a>
             </li>
@@ -34,28 +34,28 @@
 
             <!--add recipe-->
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('guestAddRecipeDisabled') }}">
                     <span class="h3">Make Recipe</span>
                 </a>
             </li>
 
             <!--AboutTab-->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('about') }}">
+                <a class="nav-link active" href="{{ route('guest-about') }}">
                     <span class="h3">About us</span>
                 </a>
             </li>
 
             <!--contactTab-->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('contact') }}">
+                <a class="nav-link" href="{{ route('guest-contact') }}">
                     <span class="h3">Contact us</span>
                 </a>
             </li>
 
             <!--Profile-->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('profile') }}">
+                <a class="nav-link" href="{{ route('guest-profile') }}">
                     <span class="h3 ms-2">{{$username}}</span>
                 </a>
             </li>

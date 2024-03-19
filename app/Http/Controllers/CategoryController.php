@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Auth\Recipe;
 use Illuminate\Http\Request;
 use App\Models\Auth\Category;
 use Illuminate\Support\Facades\Auth;
@@ -12,26 +13,20 @@ class CategoryController extends Controller
     public function categoryBoard(Request $request)
     {
         if (Auth::check()) {
-            $breakfastCategories = $this->fetchCategoriesByName('breakfast');
-            $lunchCategories = $this->fetchCategoriesByName('lunch');
-            $dinnerCategories = $this->fetchCategoriesByName('dinner');
-            $snacksCategories = $this->fetchCategoriesByName('snacks');
+            $breakfastCategories = Recipe::where('category','breakfast')->get();
+            $lunchCategories = Recipe::where('category','lunch')->get();
+            $dinnerCategories = Recipe::where('category','dinner')->get();
+            $snacksCategories = Recipe::where('category','snacks')->get();
 
-            return view('Auth.category',compact('breakfastCategories','lunchCategories','dinnerCategories','snacksCategories'));
+            return view('Auth.category', compact('breakfastCategories', 'lunchCategories', 'dinnerCategories', 'snacksCategories'));
         }
 
         return redirect()->route('login')
-                        ->withErrors(['email' => 'Please login to access the category.'])
-                        ->onlyInput('email');
+            ->withErrors(['email' => 'Please login to access the category.'])
+            ->onlyInput('email');
     }
 
-    public function fetchCategoriesByName($category)
-    {
-        //fetch categories based on their name
-        $categories = Category::where('category', $category)->get();
 
-        return $categories;
-    }
     public function bookmark($recipeId)
     {
         //auth user

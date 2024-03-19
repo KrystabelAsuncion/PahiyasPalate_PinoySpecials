@@ -76,7 +76,7 @@
 
                 <div class="row my-4 align-items-center d-flex justify-content-center">
 
-                    <div class="col-lg-3 p-4 me-3 shadow" style=" border-radius: 20px; height: 450px; background-color:#f7b97ebb;">
+                    <div class="col-lg-3 p-4 me-3 shadow h-45" style=" border-radius: 20px; background-color:#f7b97ebb;">
                         <div class="row justify-content-center">
                             @if(Auth::user()->profile_image)
                                 <!-- If user has a profile image -->
@@ -116,9 +116,9 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 mt-4">
+                    <div class="col-lg-8 mt-4 h-45">
                         <h1>Edit your details</h1>
-                        <div class="row shadow p-4 fs-2" style="width: 700px; border-radius: 20px; background-color:#f7b97ebb;">
+                        <div class="row shadow p-4 fs-2 h-100" style="border-radius: 20px; background-color:#f7b97ebb;">
 
                             <form action="{{ route('profile.update') }}" method="POST" >
                                 @csrf
@@ -146,7 +146,7 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" class="btn btn-outline-secondary fs-4" style="width: 150px; height: 35px;">
+                                <button type="submit" class="btn btn-outline-secondary fs-4">
                                     Save changes
                                 </button>
                             </form>
@@ -165,7 +165,7 @@
                                         </div>
                                         <button type="submit" class="btn btn-outline-success">Upload Image</button>
                                         @if(session('success'))
-                                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            <div class="alert alert-success alert-dismissible fade show fs-6" role="alert">
                                                 <strong>Success!</strong> {{ session('success') }}
                                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                             </div>
@@ -178,11 +178,11 @@
                         </div>
                     </div>
 
-                    <div class="row mt-3 overflow-auto">
+                    <div class="row g-2 mt-3 overflow-auto">
                         <h1>Published Recipes</h1>
                         @foreach ($publishedRecipes as $recipe)
-                            <div class="col-auto">
-                                <div class="card shadow" style="width: 20rem; height: 18rem; background: whitesmoke;">
+                            <div class="col-xl-4 col-sm-12">
+                                <div class="card shadow h-100" style="background: whitesmoke;">
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $recipe->recipe_name }}</h4>
                                         <div class="row mb-1">
@@ -205,11 +205,11 @@
                         @endforeach
                     </div>
 
-                    <div class="row mt-3">
+                    <div class="row g-2 mt-3">
                         <h1>Bookmarked Recipes</h1>
                         @foreach ($bookmarkedRecipes as $recipe)
-                            <div class="col-auto">
-                                <div class="card shadow" style="width: 20rem; height: 18rem; background: whitesmoke;">
+                            <div class="col-xl-4 col-sm-12">
+                                <div class="card shadow h-100" style="background: whitesmoke;">
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $recipe->recipe->recipe_name }}</h4>
                                         <div class="row mb-1">

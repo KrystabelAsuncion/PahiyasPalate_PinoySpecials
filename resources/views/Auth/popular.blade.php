@@ -114,7 +114,7 @@
                 </div>
 
                 <!--mostviewed-->
-                <h1 class="mt-4">Most viewed Recipes</h1>
+                <h1 class="mt-4">Most Viewed Recipes</h1>
                 <div class="row shadow-lg p-4 overflow-auto" style="white-space: nowrap;">
                     <!-- Check if most viewed recipes exist -->
                     @if ($mostViewedRecipe->isNotEmpty())

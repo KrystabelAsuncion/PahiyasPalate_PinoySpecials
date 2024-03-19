@@ -181,8 +181,7 @@ class DataController extends Controller
     public function showRecipe($id)
     {
         // Fetch the recipe data for the clicked recipe
-        $recipe = Recipe::with(['steps','level','ingredients'])->findOrFail($id);
-        $category = Category::findOrFail($recipe->category_id);
+        $recipe = Recipe::with(['steps','ingredients'])->findOrFail($id);
 
         $currentRecipe = Recipe::find($id);
         $currentCategory = $currentRecipe->category;
@@ -191,7 +190,7 @@ class DataController extends Controller
         $recipe->increment('views_count');
 
         // Pass the $recipe data to the view
-        return view('Auth.recipe', compact('recipe','category','likesCount','currentCategory', 'currentRecipe'));
+        return view('Auth.recipe', compact('recipe','likesCount','currentCategory', 'currentRecipe'));
     }
 
     public function destroyRecipe($id)
